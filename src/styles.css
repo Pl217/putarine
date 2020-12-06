@@ -1,0 +1,175 @@
+/* Box sizing rules */
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* Remove default padding */
+
+ul[class], ol[class] {
+	padding: 0;
+}
+
+/* Remove default margin */
+
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
+	margin: 0;
+}
+
+/* Set core body defaults */
+
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+
+ul[class], ol[class] {
+	list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+
+article>*+* {
+	margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+
+input, button, textarea, select {
+	font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/****************** End of reset ******************/
+
+body {
+	padding: 2em;
+}
+
+details {
+	text-align: center;
+	margin-bottom: 1.5em;
+}
+
+summary {
+	cursor: pointer;
+}
+
+details>p {
+	padding: 0 4em;
+}
+
+ul {
+	text-align: center;
+	list-style-position: inside;
+}
+
+#напомена {
+	display: inline-block;
+	padding: 0.5em;
+	border: 1px solid #2c3e50;
+	margin-bottom: 1em;
+}
+
+#бирач {
+	display: flex;
+	justify-content: center;
+	max-width: 800px;
+	margin: 0 auto;
+	align-items: flex-end;
+}
+
+#замена {
+	cursor: pointer;
+	background-color: #2c3e50;
+	margin: 0 1em;
+	border: 0;
+	width: 3em;
+	height: 3em;
+}
+
+.селект {
+	cursor: pointer;
+	background: #2c3e50;
+	color: #fff;
+	height: 3em;
+	line-height: 3;
+	border-radius: 0.25em;
+	padding: 0 0.5em;
+}
+
+#резултат {
+	margin: 2em auto;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+table {
+	border: none;
+	border-collapse: collapse;
+}
+
+table td, table th {
+	border-left: 1px solid #2c3e50;
+	padding-left: 2em;
+}
+
+table td:first-child, table th:first-child {
+	border-left: none;
+	padding-right: 1em;
+}
+
+table td:last-child, table th:last-child {
+	padding-left: 1em;
+}
+
+#времена {
+	font-size: 1.125em;
+	text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		padding: 2em 1em;
+	}
+	ul {
+		padding: 0;
+	}
+	details>p {
+		padding: 0 1em;
+	}
+	#бирач {
+		flex-direction: column;
+		align-items: center;
+	}
+	#замена {
+		margin: 1em;
+	}
+}

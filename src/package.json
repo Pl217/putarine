@@ -1,0 +1,16 @@
+{
+  "name": "putarina",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "html-inline --ignore-images --ignore-links -i index.html | html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-tag-whitespace --minify-css true --minify-js true > ../site/index.html && cp -a ./static/. ../site/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-inline": "^1.2.0",
+    "html-minifier": "^4.0.0"
+  },
+  "dependencies": {}
+}
