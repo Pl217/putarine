@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "html-inline --ignore-images --ignore-links -i index.html | html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-tag-whitespace --minify-css true --minify-js true > ../site/index.html && cp -a ./static/. ../site/"
+    "build": "html-inline --ignore-images --ignore-links -i index.html | html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-tag-whitespace --minify-css true --minify-js true > ../index.html && cp -a ./static/. ../"
   },
   "author": "",
   "license": "ISC",
