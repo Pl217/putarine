@@ -13,5 +13,6 @@ npm ci
 # Комитовати
 cd src
 npm run build
+# Комитовати
 git push
 ```
