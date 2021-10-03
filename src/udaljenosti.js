@@ -1,9 +1,9 @@
 var удаљености = [];
 
-for (var i = 0; i < 61; i++) {
+for (var i = 0; i < 62; i++) {
 	удаљености.push([]);
 
-	for (var j = 0; j < 61; j++) {
+	for (var j = 0; j < 62; j++) {
 		удаљености[i].push(i === j ? 0 : null);
 	}
 }
