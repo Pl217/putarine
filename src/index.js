@@ -3972,80 +3972,82 @@ var цене = [
 var удаљеност;
 
 function промени() {
-	var в1 = document.getElementById( 'ца' ).value;
-	var в2 = document.getElementById( 'цб' ).value;
+  var в1 = document.getElementById('ца').value;
+  var в2 = document.getElementById('цб').value;
 
-	var цена = 0;
-	удаљеност = 'непознато';
+  var цена = 0;
+  удаљеност = 'непознато';
 
-	if ( в1 != в2 ) {
-		цена = цене[ в1 ][ в2 ];
-		удаљеност = удаљености[ в1 ][ в2 ] || 'непознато';
-	}
+  if (в1 != в2) {
+    цена = цене[в1][в2];
+    удаљеност = удаљености[в1][в2] || 'непознато';
+  }
 
-	document.getElementById( 'цена' ).textContent = цена;
-	document.getElementById( 'удаљеност' ).textContent = удаљеност + ' км';
+  document.getElementById('цена').textContent = цена;
+  document.getElementById('удаљеност').textContent = удаљеност + ' км';
 
-	израчунајВреме();
+  израчунајВреме();
 }
 
 function замени() {
-	var први = document.getElementById( 'ца' );
-	var други = document.getElementById( 'цб' );
-	var првиВр = први.selectedIndex;
+  var први = document.getElementById('ца');
+  var други = document.getElementById('цб');
+  var првиВр = први.selectedIndex;
 
-	први.selectedIndex = други.selectedIndex;
-	други.selectedIndex = првиВр;
+  први.selectedIndex = други.selectedIndex;
+  други.selectedIndex = првиВр;
 
-	промени();
+  промени();
 }
 
 function израчунајВреме() {
-	var брзина = document.getElementById( 'брзина' ).value;
+  var брзина = document.getElementById('брзина').value;
 
-	if ( Number.isNaN( удаљеност ) || Number.isNaN( брзина ) || брзина <= 0 ) {
-		document.getElementById( 'време' ).textContent = 'непознато';
-		return;
-	}
+  if (Number.isNaN(удаљеност) || Number.isNaN(брзина) || брзина <= 0) {
+    document.getElementById('време').textContent = 'непознато';
+    return;
+  }
 
-	var минута = ( удаљеност / брзина ) * 60;
-	document.getElementById( 'време' ).textContent = минутиУСате( Math.ceil( минута ) );
+  var минута = (удаљеност / брзина) * 60;
+  document.getElementById('време').textContent = минутиУСате(Math.ceil(минута));
 }
 
-function минутиУСате( минута ) {
-	var сати = минута / 60;
-	var заокружениСати = Math.floor( сати );
-	var минути = ( сати - заокружениСати ) * 60;
-	var заокружениМинути = Math.round( минути );
+function минутиУСате(минута) {
+  var сати = минута / 60;
+  var заокружениСати = Math.floor(сати);
+  var минути = (сати - заокружениСати) * 60;
+  var заокружениМинути = Math.round(минути);
 
-	if ( заокружениСати === 0 ) {
-		return вратиРеч( заокружениМинути );
-	}
-	return вратиРеч( заокружениСати, true ) + ' и ' + вратиРеч( заокружениМинути );
+  if (заокружениСати === 0) {
+    return вратиРеч(заокружениМинути);
+  }
+  return вратиРеч(заокружениСати, true) + ' и ' + вратиРеч(заокружениМинути);
 }
 
-function вратиРеч( број, јеЛиСат ) {
-	switch ( бројРечи( број ) ) {
-		case 1:
-			return број + ( јеЛиСат ? ' сат' : ' минут' );
-		case 2:
-			return број + ( јеЛиСат ? ' сата' : ' минута' );
-		default:
-			return број + ( јеЛиСат ? ' сати' : ' минута' );
-	}
+function вратиРеч(број, јеЛиСат) {
+  switch (бројРечи(број)) {
+    case 1:
+      return број + (јеЛиСат ? ' сат' : ' минут');
+    case 2:
+      return број + (јеЛиСат ? ' сата' : ' минута');
+    default:
+      return број + (јеЛиСат ? ' сати' : ' минута');
+  }
 }
 
-function бројРечи( број ) {
-	if ( број % 10 === 1 && број % 100 !== 11 ) {
-		return 1;
-	}
+function бројРечи(број) {
+  if (број % 10 === 1 && број % 100 !== 11) {
+    return 1;
+  }
 
-	if ( ( број % 10 >= 2 ) && ( број % 10 <= 4 ) &&
-		( број % 100 < 12 ) || ( број % 100 > 14 ) ) {
-		return 2;
-	}
+  if (
+    (број % 10 >= 2 && број % 10 <= 4 && број % 100 < 12) ||
+    број % 100 > 14
+  ) {
+    return 2;
+  }
 
-	return 0;
+  return 0;
 }
 
 window.onload = промени;

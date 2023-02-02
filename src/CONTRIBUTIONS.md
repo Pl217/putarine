@@ -5,5 +5,5 @@
 1. Search for "dist ="
 1. Right click, Copy->Copy element and then paste the entire body of `<script>` tag into Console tab
 1. Add the following line of code after pasted array
-`console.log(JSON.stringify(dist.map((d) => d.filter((_e, i) => i % 5 === 1))));`
+   `console.log(JSON.stringify(dist.map((d) => d.filter((_e, i) => i % 5 === 1))));`
 1. Copy the output of this script and assign to `цене` in `src\index.js`

@@ -1,205 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Наплатне рампе</title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Наплатне рампе</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#ffffff" />
 
-	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-	<link rel="manifest" href="./site.webmanifest">
-	<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#2b5797">
-	<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="text/javascript" src="./udaljenosti.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+  </head>
 
-	<link rel="stylesheet" href="./styles.css">
-	<script type="text/javascript" src="./udaljenosti.js"></script>
-	<script type="text/javascript" src="./index.js"></script>
-</head>
+  <body>
+    <details>
+      <summary>Напомена</summary>
+      <p>
+        Уколико је Ваша почетна наплатна станица Стара Пазова или Шимановци,
+        тзв. чеона наплатна станица, потребно је да у падајућем менију као
+        улазну наплатну станицу одаберете следеће:
+      </p>
+      <ul>
+        <li>за н.с. Стара Пазова, бирате Београд</li>
+        <li>за н.с. Шимановци бирате Београд</li>
+      </ul>
+      <p id="напомена">Цене ажуриране <strong>8. децембра 2020.</strong></p>
+      <hr />
+    </details>
+    <main id="бирач">
+      <label for="ца"
+        >Улазна наплатна станица<br />
+        <select class="селект" id="ца" name="ца" size="1" onchange="промени();">
+          <option value="43">Адашевац</option>
+          <option value="28">Алексинац</option>
+          <option value="27">Алексиначки Рудници</option>
+          <option value="21">Баточина</option>
+          <option value="2">Бачка Топола</option>
+          <option value="58">Бела Паланка</option>
+          <option value="11">Београд</option>
+          <option value="8">Бешка</option>
+          <option value="31">Брестовац</option>
+          <option value="39">Бујановац југ</option>
+          <option value="38">Бујановац север</option>
+          <option value="41">Димитровград</option>
+          <option value="30">Дољевац</option>
+          <option value="3">Фекетић</option>
+          <option value="34">Грделица</option>
+          <option value="10">Инђија</option>
+          <option value="22">Јагодина</option>
+          <option value="15">Колари</option>
+          <option value="7">Ковиљ</option>
+          <option value="44">Кузмин</option>
+          <option value="52">Лајковац</option>
+          <option value="20">Лапово</option>
+          <option value="32">Лесковац центар</option>
+          <option value="33">Лесковац југ</option>
+          <option value="53">Љиг</option>
+          <option value="12">Мали Пожаревац</option>
+          <option value="9">Марадик</option>
+          <option value="19">Марковац</option>
+          <option value="54">Мерошина</option>
+          <option value="61">Моровић</option>
+          <option value="57">Ниш Малча</option>
+          <option selected="selected" value="56">Ниш исток</option>
+          <option value="29">Ниш југ</option>
+          <option value="55">Ниш север</option>
+          <option value="6">Нови Сад</option>
+          <option value="50">Обреновац</option>
+          <option value="24">Параћин</option>
+          <option value="47">Пећинци</option>
+          <option value="60">Пирот исток</option>
+          <option value="59">Пирот запад</option>
+          <option value="25">Појате</option>
+          <option value="17">Пожаревац</option>
+          <option value="35">Предејане</option>
+          <option value="49">Прељина</option>
+          <option value="40">Прешево</option>
+          <option value="26">Ражањ</option>
+          <option value="46">Рума</option>
+          <option value="16">Смедерево</option>
+          <option value="45">Сремска Митровица</option>
+          <option value="0">Суботица</option>
+          <option value="48">Таково</option>
+          <option value="51">Уб</option>
+          <option value="13">Умчари</option>
+          <option value="18">Велика Плана</option>
+          <option value="36">Владичин Хан</option>
+          <option value="14">Водањ</option>
+          <option value="37">Врање</option>
+          <option value="4">Врбас</option>
+          <option value="5">Змајево</option>
+          <option value="23">Ћуприја</option>
+          <option value="42">Шид</option>
+          <option value="1">Жедник</option>
+        </select>
+      </label>
+      <button id="замена" onclick="замени();">
+        <svg
+          width="20px"
+          height="20px"
+          viewBox="0 0 16 16"
+          class="bi bi-arrow-left-right"
+          fill="#ffffff"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"
+          />
+        </svg>
+      </button>
+      <label for="цб"
+        >Излазна наплатна станица<br />
+        <select class="селект" id="цб" name="цб" size="1" onchange="промени();">
+          <option value="43">Адашевац</option>
+          <option value="28">Алексинац</option>
+          <option value="27">Алексиначки Рудници</option>
+          <option value="21">Баточина</option>
+          <option value="2">Бачка Топола</option>
+          <option value="58">Бела Паланка</option>
+          <option selected="selected" value="11">Београд</option>
+          <option value="8">Бешка</option>
+          <option value="31">Брестовац</option>
+          <option value="39">Бујановац југ</option>
+          <option value="38">Бујановац север</option>
+          <option value="41">Димитровград</option>
+          <option value="30">Дољевац</option>
+          <option value="3">Фекетић</option>
+          <option value="34">Грделица</option>
+          <option value="10">Инђија</option>
+          <option value="22">Јагодина</option>
+          <option value="15">Колари</option>
+          <option value="7">Ковиљ</option>
+          <option value="44">Кузмин</option>
+          <option value="52">Лајковац</option>
+          <option value="20">Лапово</option>
+          <option value="32">Лесковац центар</option>
+          <option value="33">Лесковац југ</option>
+          <option value="53">Љиг</option>
+          <option value="12">Мали Пожаревац</option>
+          <option value="9">Марадик</option>
+          <option value="19">Марковац</option>
+          <option value="54">Мерошина</option>
+          <option value="61">Моровић</option>
+          <option value="57">Ниш Малча</option>
+          <option value="56">Ниш исток</option>
+          <option value="29">Ниш југ</option>
+          <option value="55">Ниш север</option>
+          <option value="6">Нови Сад</option>
+          <option value="50">Обреновац</option>
+          <option value="24">Параћин</option>
+          <option value="47">Пећинци</option>
+          <option value="60">Пирот исток</option>
+          <option value="59">Пирот запад</option>
+          <option value="25">Појате</option>
+          <option value="17">Пожаревац</option>
+          <option value="35">Предејане</option>
+          <option value="49">Прељина</option>
+          <option value="40">Прешево</option>
+          <option value="26">Ражањ</option>
+          <option value="46">Рума</option>
+          <option value="16">Смедерево</option>
+          <option value="45">Сремска Митровица</option>
+          <option value="0">Суботица</option>
+          <option value="48">Таково</option>
+          <option value="51">Уб</option>
+          <option value="13">Умчари</option>
+          <option value="18">Велика Плана</option>
+          <option value="36">Владичин Хан</option>
+          <option value="14">Водањ</option>
+          <option value="37">Врање</option>
+          <option value="4">Врбас</option>
+          <option value="5">Змајево</option>
+          <option value="23">Ћуприја</option>
+          <option value="42">Шид</option>
+          <option value="1">Жедник</option>
+        </select>
+      </label>
+    </main>
 
-<body>
-	<details>
-		<summary>Напомена</summary>
-		<p>Уколико је Ваша почетна наплатна станица Стара Пазова или Шимановци, тзв. чеона наплатна станица, потребно је
-			да
-			у падајућем менију као улазну наплатну станицу одаберете следеће:</p>
-		<ul>
-			<li>за н.с. Стара Пазова, бирате Београд</li>
-			<li>за н.с. Шимановци бирате Београд</li>
-		</ul>
-		<p id="напомена">Цене ажуриране <strong>8. децембра 2020.</strong></p>
-		<hr>
-	</details>
-	<main id="бирач">
-		<label for="ца">Улазна наплатна станица<br>
-			<select class="селект" id="ца" name="ца" size="1" onchange="промени();">
-				<option value="43">Адашевац</option>
-				<option value="28">Алексинац</option>
-				<option value="27">Алексиначки Рудници</option>
-				<option value="21">Баточина</option>
-				<option value="2">Бачка Топола</option>
-				<option value="58">Бела Паланка</option>
-				<option value="11">Београд</option>
-				<option value="8">Бешка</option>
-				<option value="31">Брестовац</option>
-				<option value="39">Бујановац југ</option>
-				<option value="38">Бујановац север</option>
-				<option value="41">Димитровград</option>
-				<option value="30">Дољевац</option>
-				<option value="3">Фекетић</option>
-				<option value="34">Грделица</option>
-				<option value="10">Инђија</option>
-				<option value="22">Јагодина</option>
-				<option value="15">Колари</option>
-				<option value="7">Ковиљ</option>
-				<option value="44">Кузмин</option>
-				<option value="52">Лајковац</option>
-				<option value="20">Лапово</option>
-				<option value="32">Лесковац центар</option>
-				<option value="33">Лесковац југ</option>
-				<option value="53">Љиг</option>
-				<option value="12">Мали Пожаревац</option>
-				<option value="9">Марадик</option>
-				<option value="19">Марковац</option>
-				<option value="54">Мерошина</option>
-				<option value="61">Моровић</option>
-				<option value="57">Ниш Малча</option>
-				<option selected="selected" value="56">Ниш исток</option>
-				<option value="29">Ниш југ</option>
-				<option value="55">Ниш север</option>
-				<option value="6">Нови Сад</option>
-				<option value="50">Обреновац</option>
-				<option value="24">Параћин</option>
-				<option value="47">Пећинци</option>
-				<option value="60">Пирот исток</option>
-				<option value="59">Пирот запад</option>
-				<option value="25">Појате</option>
-				<option value="17">Пожаревац</option>
-				<option value="35">Предејане</option>
-				<option value="49">Прељина</option>
-				<option value="40">Прешево</option>
-				<option value="26">Ражањ</option>
-				<option value="46">Рума</option>
-				<option value="16">Смедерево</option>
-				<option value="45">Сремска Митровица</option>
-				<option value="0">Суботица</option>
-				<option value="48">Таково</option>
-				<option value="51">Уб</option>
-				<option value="13">Умчари</option>
-				<option value="18">Велика Плана</option>
-				<option value="36">Владичин Хан</option>
-				<option value="14">Водањ</option>
-				<option value="37">Врање</option>
-				<option value="4">Врбас</option>
-				<option value="5">Змајево</option>
-				<option value="23">Ћуприја</option>
-				<option value="42">Шид</option>
-				<option value="1">Жедник</option>
-			</select>
-		</label>
-		<button id="замена" onclick="замени();">
-			<svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-arrow-left-right" fill="#ffffff"
-				xmlns="http://www.w3.org/2000/svg">
-				<path fill-rule="evenodd"
-					d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z" />
-			</svg>
-		</button>
-		<label for="цб">Излазна наплатна станица<br>
-			<select class="селект" id="цб" name="цб" size="1" onchange="промени();">
-				<option value="43">Адашевац</option>
-				<option value="28">Алексинац</option>
-				<option value="27">Алексиначки Рудници</option>
-				<option value="21">Баточина</option>
-				<option value="2">Бачка Топола</option>
-				<option value="58">Бела Паланка</option>
-				<option selected="selected" value="11">Београд</option>
-				<option value="8">Бешка</option>
-				<option value="31">Брестовац</option>
-				<option value="39">Бујановац југ</option>
-				<option value="38">Бујановац север</option>
-				<option value="41">Димитровград</option>
-				<option value="30">Дољевац</option>
-				<option value="3">Фекетић</option>
-				<option value="34">Грделица</option>
-				<option value="10">Инђија</option>
-				<option value="22">Јагодина</option>
-				<option value="15">Колари</option>
-				<option value="7">Ковиљ</option>
-				<option value="44">Кузмин</option>
-				<option value="52">Лајковац</option>
-				<option value="20">Лапово</option>
-				<option value="32">Лесковац центар</option>
-				<option value="33">Лесковац југ</option>
-				<option value="53">Љиг</option>
-				<option value="12">Мали Пожаревац</option>
-				<option value="9">Марадик</option>
-				<option value="19">Марковац</option>
-				<option value="54">Мерошина</option>
-				<option value="61">Моровић</option>
-				<option value="57">Ниш Малча</option>
-				<option value="56">Ниш исток</option>
-				<option value="29">Ниш југ</option>
-				<option value="55">Ниш север</option>
-				<option value="6">Нови Сад</option>
-				<option value="50">Обреновац</option>
-				<option value="24">Параћин</option>
-				<option value="47">Пећинци</option>
-				<option value="60">Пирот исток</option>
-				<option value="59">Пирот запад</option>
-				<option value="25">Појате</option>
-				<option value="17">Пожаревац</option>
-				<option value="35">Предејане</option>
-				<option value="49">Прељина</option>
-				<option value="40">Прешево</option>
-				<option value="26">Ражањ</option>
-				<option value="46">Рума</option>
-				<option value="16">Смедерево</option>
-				<option value="45">Сремска Митровица</option>
-				<option value="0">Суботица</option>
-				<option value="48">Таково</option>
-				<option value="51">Уб</option>
-				<option value="13">Умчари</option>
-				<option value="18">Велика Плана</option>
-				<option value="36">Владичин Хан</option>
-				<option value="14">Водањ</option>
-				<option value="37">Врање</option>
-				<option value="4">Врбас</option>
-				<option value="5">Змајево</option>
-				<option value="23">Ћуприја</option>
-				<option value="42">Шид</option>
-				<option value="1">Жедник</option>
-			</select>
-		</label>
-	</main>
+    <table id="резултат">
+      <thead>
+        <tr>
+          <th scope="col">Цена</th>
+          <th scope="col">Удаљеност</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="цена">0</td>
+          <td id="удаљеност">непознато</td>
+        </tr>
+      </tbody>
+    </table>
 
-	<table id="резултат">
-		<thead>
-			<tr>
-				<th scope="col">Цена</th>
-				<th scope="col">Удаљеност</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td id="цена">0</td>
-				<td id="удаљеност">непознато</td>
-			</tr>
-		</tbody>
-	</table>
-
-	<section id="времена">
-		<span>
-			<label style="margin-right: 0.5em;" for="брзина">Брзина</label>
-			<input type="number" min="1" max="200" id="брзина" name="брзина" value="125" onkeyup="израчунајВреме();">
-			<span><b>км/ч</b></span>
-		</span>
-		<hr>
-		<span>
-			<p>Минимално време </p><b id="време">непознато</b>
-		</span>
-	</section>
-</body>
-
+    <section id="времена">
+      <span>
+        <label style="margin-right: 0.5em" for="брзина">Брзина</label>
+        <input
+          type="number"
+          min="1"
+          max="200"
+          id="брзина"
+          name="брзина"
+          value="125"
+          onkeyup="израчунајВреме();"
+        />
+        <span><b>км/ч</b></span>
+      </span>
+      <hr />
+      <span>
+        <p>Минимално време</p>
+        <b id="време">непознато</b>
+      </span>
+    </section>
+  </body>
 </html>
