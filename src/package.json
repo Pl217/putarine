@@ -1,6 +1,6 @@
 {
   "name": "putarina",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "scripts": {
     "build": "html-inline --ignore-images --ignore-links -i index.html | html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-tag-whitespace --minify-css true --minify-js true > ../index.html && cp -a ./static/. ../",
