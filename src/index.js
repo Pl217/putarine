@@ -4107,7 +4107,9 @@ function промени() {
 
   if (в1 != в2) {
     цена = цене[в1][в2];
-    удаљеност = удаљености[в1][в2] || 'непознато';
+    удаљеност = удаљености[в1]
+      ? удаљености[в1][в2] || 'непознато'
+      : 'непознато';
   }
 
   document.getElementById('цена').textContent = цена;
@@ -4130,7 +4132,7 @@ function замени() {
 function израчунајВреме() {
   var брзина = document.getElementById('брзина').value;
 
-  if (Number.isNaN(удаљеност) || Number.isNaN(брзина) || брзина <= 0) {
+  if (Number.isNaN(+удаљеност) || Number.isNaN(+брзина) || +брзина <= 0) {
     document.getElementById('време').textContent = 'непознато';
     return;
   }
