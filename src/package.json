@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "html-inline --ignore-images --ignore-links -i index.html | html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-tag-whitespace --minify-css true --minify-js true > ../index.html && cp -a ./static/. ../",
+    "prepare": "git config blame.ignoreRevsFile src/.git-blame-ignore-revs;",
     "reinstall": "rm -rf node_modules/ && npm i"
   },
   "author": "",
