@@ -7,7 +7,7 @@
     "prepare": "git config blame.ignoreRevsFile src/.git-blame-ignore-revs; cd .. && husky install src/.husky",
     "reinstall": "rm -rf node_modules/ && npm i"
   },
-  "author": "",
+  "author": "Pl217",
   "license": "ISC",
   "devDependencies": {
     "html-inline": "^1.2.0",
